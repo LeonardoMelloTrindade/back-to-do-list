@@ -1,13 +1,18 @@
-const express = require("express")
-require('dotenv').config()
+import express from 'express';
+import dotenv from 'dotenv';
+import routes from './routes/routes';
+
+dotenv.config();
 
 const app = express();
-const port = process.env.PORT
+const PORT = process.env.PORT || 3001;
 
-app.get('/teste/leozito', (req, res) => {
-    res.send('KOEEEE RAPAZIADAAAAAAAAAA')
-})
+app.use('/', routes);
 
-app.listen(port, () => {
-    console.log(`Servidor iniciado na port ${port}`)
-})
+try {
+    app.listen(PORT, () => {
+        console.log(`🌍 Servidor iniciado na porta ${PORT}`)
+    })
+  } catch (error) {
+     throw Error (`❌ Erro ao iniciar o servidor: ${error}`)
+  }
