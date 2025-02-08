@@ -5,4 +5,4 @@ const groupController = new GroupController();
 
 export const groupRouter = Router();
 
-groupRouter.get('/groups', groupController.getGroups);
+groupRouter.get('/group', groupController.getGroups);
