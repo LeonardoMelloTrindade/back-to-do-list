@@ -1,13 +1,9 @@
-const express = require("express")
-require('dotenv').config()
+import { sincronyzeDatabase } from "./config/database";
+import { startServer } from "./config/server";
 
-const app = express();
-const port = process.env.PORT
+const initializeApp = async () => {
+    await sincronyzeDatabase();
+    startServer();
+};
 
-app.get('/teste/leozito', (req, res) => {
-    res.send('KOEEEE RAPAZIADAAAAAAAAAA')
-})
-
-app.listen(port, () => {
-    console.log(`Servidor iniciado na port ${port}`)
-})
+initializeApp();
