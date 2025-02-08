@@ -1,12 +1,11 @@
 import express from 'express';
-import { environments } from '../utils/environments';
+import { environments } from '../utils/environments.utils';
+import { routers } from '../routes/routes';
 
 const app = express();
 const port = environments.API_PORT;
 
-app.get('/', (req, res) => {
-    res.send('ta indo esse kct né?')
-})
+app.use('/', routers);
 
 export const startServer = () => {
     try {

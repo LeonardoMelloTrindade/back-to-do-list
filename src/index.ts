@@ -1,5 +1,5 @@
-import { sincronyzeDatabase } from "./config/database";
-import { startServer } from "./config/server";
+import { sincronyzeDatabase } from "./configs/database";
+import { startServer } from "./configs/server";
 
 const initializeApp = async () => {
     await sincronyzeDatabase();
