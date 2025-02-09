@@ -10,10 +10,7 @@ export class GroupController {
     }
 
     getGroups(req: Request, res: Response) {
-        try {
-            res.send(this.groupService.getGroups());
-        } catch(error) {
-            throw new Error('Erro ao listar os grupos:');
-        }
+        res.send(this.groupService.getGroups());
+
     }
 }

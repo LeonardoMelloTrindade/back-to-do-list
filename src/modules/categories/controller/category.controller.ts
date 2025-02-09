@@ -10,10 +10,7 @@ export class CategoryController {
     }
 
     getCategories(req: Request, res: Response) {
-        try {
-            res.send(this.categoryService.getCategories());
-        } catch(error) {
-            throw new Error('Erro ao listar os grupos:');
-        }
+        res.send(this.categoryService.getCategories());
+        
     }
 }

@@ -1,7 +1,7 @@
 import mysql2 from 'mysql2/promise';
 import { environments } from '../utils/environments.utils';
 
-const db = mysql2.createConnection({
+export const db = mysql2.createConnection({
     host: environments.DATABASE_HOST,
     user: environments.DATABASE_USER,
     password: environments.DATABASE_PASSWORD,

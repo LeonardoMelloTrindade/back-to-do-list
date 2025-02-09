@@ -1,7 +1,13 @@
+import { db } from "../../../configs/database"
 export class CategoryService {
 
-    getCategories() {
-        return 'E tome categorias'
+    async getCategories() {
+        try {
+            const categories = (await db).query('SELECT * FROM `Categorias`');
+            return categories;
+        } catch(error) {
+            throw new Error('Erro ao listar as categorias:');
+        }
     }
 
 }
