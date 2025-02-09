@@ -9,8 +9,9 @@ export class GroupController {
         this.getGroups = this.getGroups.bind(this)
     }
 
-    getGroups(req: Request, res: Response) {
-        res.send(this.groupService.getGroups());
-
+    async getGroups(req: Request, res: Response) {
+        const groups = await this.groupService.getGroups();
+        res.send(groups);
+        
     }
 }

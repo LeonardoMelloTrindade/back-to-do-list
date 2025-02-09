@@ -4,7 +4,7 @@ export class GroupService {
 
     async getGroups() {
         try {
-            const groups = (await db).query('SELECT * FROM `Grupos`');
+            const [groups, fields] = await (await db).query('SELECT * FROM `Groups`');
             return groups;
         } catch(error) {
             throw new Error('Erro ao listar os grupos');
