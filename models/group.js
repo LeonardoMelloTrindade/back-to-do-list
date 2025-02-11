@@ -1,7 +1,4 @@
 'use strict';
-
-category
-
 const {
   Model
 } = require('sequelize');

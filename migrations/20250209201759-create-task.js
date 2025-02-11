@@ -25,6 +25,10 @@ module.exports = {
           key: 'id'
         }
       },
+      name: {
+        allowNull: true,
+        type: DataTypes.STRING
+      },
       description: {
         allowNull: true,
         type: DataTypes.STRING
