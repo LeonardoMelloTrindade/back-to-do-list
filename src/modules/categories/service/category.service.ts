@@ -3,7 +3,7 @@ export class CategoryService {
 
     async getCategories() {
         try {
-            const categories = (await db).query('SELECT * FROM `Categorias`');
+            const [categories, fields] = await (await db).query('SELECT * FROM `Categories`');
             return categories;
         } catch(error) {
             throw new Error('Erro ao listar as categorias:');

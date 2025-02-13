@@ -9,8 +9,8 @@ export class CategoryController {
         this.getCategories = this.getCategories.bind(this);
     }
 
-    getCategories(req: Request, res: Response) {
-        res.send(this.categoryService.getCategories());
-        
+    async getCategories(req: Request, res: Response) {
+        const categories = await this.categoryService.getCategories();
+        res.send(categories);
     }
 }
